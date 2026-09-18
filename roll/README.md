@@ -124,3 +124,11 @@ uv run roll/annotation/annotator_gui.py
 ```powershell
 uv run roll/capture/capture_gui.py
 ```
+
+---
+
+## 🤝 致谢与结对协作 (Acknowledgements)
+
+- **主导开发 (Author)**：[HengmingZ](https://github.com/HengmingZ)
+- **架构结对 (AI Pair Programmer)**：[Google DeepMind Antigravity](https://deepmind.google/)
+
