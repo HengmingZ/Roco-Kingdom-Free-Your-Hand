@@ -1,4 +1,4 @@
-# 🎮 Roco-Kingdom-Free-Your-Hand (洛克王国：解放双手)
+# Roco-Kingdom-Free-Your-Hand (洛克王国：解放双手)
 
 <p align="center">
   <b>基于深度学习目标检测 (YOLO-m) 与双轴视觉伺服 PID 的全自动瞄准追踪与脉冲连点系统</b><br>
@@ -14,22 +14,22 @@
 
 ---
 
-## 🌟 核心特性 (Key Features)
+## 核心特性 (Key Features)
 
-- 🎯 **双轴视觉伺服 PID 闭环控制 (Visual Servoing PID)**：
+- **双轴视觉伺服 PID 闭环控制 (Visual Servoing PID)**：
   - 水平 (Yaw) 与垂直 (Pitch) 独立自适应微分滤波 PID 控制器。
   - 动态抗积分饱和（Anti-windup）与死区（Deadband）防抖设计，准星平滑居中不甩头。
-- ⚡ **多目标连续稳定锁定算法 (TargetTracker Engine)**：
+- **多目标连续稳定锁定算法 (TargetTracker Engine)**：
   - 基于空间欧氏距离、IoU 重合度与长宽比一致性的多维运动学代价匹配（Cost Matrix）。
   - 集成**相机自我运动前馈补偿 (Ego-Motion Feedforward)** 与 8 帧失靶遮挡缓冲，彻底解决多个目标同屏时的频繁切目标与抖动问题。
-- 🖱️ **无阻塞脉冲并发连点机制 (Concurrent Click While Tracking)**：
+- **无阻塞脉冲并发连点机制 (Concurrent Click While Tracking)**：
   - 15ms 硬件级极简脉冲状态机，一边转动镜头平滑跟瞄，一边全速注入左键点击，零锁帧零顿挫。
   - 连点频率支持无级调节（0.03s ~ 0.50s，即 2 ~ 33 CPS，默认 0.15s ≈ 6.7 CPS）。
-- 🎛️ **实时交互式调参 GUI 控制台 (`roll/control/aim_gui.py`)**：
+- **实时交互式调参 GUI 控制台 (`roll/control/aim_gui.py`)**：
   - 滑块即拖即生效：在线调整 $K_p$ / $K_d$ 增益、锁定死区半径、置信度阈值及连点间隔。
   - 画面缩略图实时监控：可视化渲染目标框、准星中心与偏差向量。
   - **100Hz 独立高频全局热键守护线程**：脱离重度推理循环，`F7` 紧急暂停实现 `<5ms` 超灵敏熔断，并支持 `F7` / `N` / `ESC` 多键冗余容错。
-- 🛠️ **一体化工业级工具链**：
+- **一体化工业级工具链**：
   - 屏幕截图多屏采集器 (`roll/capture/capture_gui.py`)
   - 单目标急速标注器 (`roll/annotation/annotator_gui.py`)
   - YOLOv8m 微调训练与轻量导出脚本 (`roll/model/train.py`)
@@ -37,7 +37,7 @@
 
 ---
 
-## 📂 项目结构 (Project Structure)
+## 项目结构 (Project Structure)
 
 ```text
 RocoClicker/
@@ -78,7 +78,7 @@ RocoClicker/
 
 ---
 
-## 🚀 快速上手 (Quick Start)
+## 快速上手 (Quick Start)
 
 ### 1. 环境准备 (Prerequisites)
 
@@ -105,15 +105,15 @@ uv sync
 ### 3. 模型权重 (开箱即用 / Out of the Box)
 
 本项目提供完整的训练权重自动下载与官方 Release 托管支持：
-* 📦 **官方 Release 发布页**：[v1.0.0 - YOLOv8m 视觉伺服跟瞄初始版本](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0)（包含微调好的 `best.pt`，文件大小 49.6 MB / 52.0 MB）。
-* 🚀 **自动静默补齐（推荐）**：启动 `aim_gui.py` 或 `run_aim_loop.py` 时，若检测到本地缺失 `roll/weights/best.pt`，系统将自动从 Release 资产中流式下载微调模型，完全开箱即用。
-* 📥 **手动一键下载**：亦可随时运行独立下载工具：
+* **官方 Release 发布页**：[v1.0.0 - YOLOv8m 视觉伺服跟瞄初始版本](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0)（包含微调好的 `best.pt`，文件大小 49.6 MB / 52.0 MB）。
+* **自动静默补齐（推荐）**：启动 `aim_gui.py` 或 `run_aim_loop.py` 时，若检测到本地缺失 `roll/weights/best.pt`，系统将自动从 Release 资产中流式下载微调模型，完全开箱即用。
+* **手动一键下载**：亦可随时运行独立下载工具：
   ```powershell
   uv run roll/download_weights.py
   ```
   或双击运行批处理脚本：`roll/run_download_weights.bat`。
-* 🌐 **浏览器手动下载**：可直接在 [Release v1.0.0](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0) 页面下载 `best.pt` 附件，并放置在 `roll/weights/best.pt` 即可。
-* ⚡ **国内镜像加速（可选）**：如遇 GitHub 连接受限，可在终端指定环境变量下载：
+* **浏览器手动下载**：可直接在 [Release v1.0.0](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0) 页面下载 `best.pt` 附件，并放置在 `roll/weights/best.pt` 即可。
+* **国内镜像加速（可选）**：如遇 GitHub 连接受限，可在终端指定环境变量下载：
   ```powershell
   $env:ROCO_WEIGHTS_URL="https://ghfast.top/https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/download/v1.0.0/best.pt"
   uv run roll/download_weights.py
@@ -121,7 +121,7 @@ uv sync
 
 ---
 
-## 🎮 运行控制 (Usage)
+## 运行控制 (Usage)
 
 ### 方式 A：图形化控制台（推荐，支持边玩边调参）
 
@@ -153,7 +153,7 @@ uv run roll/control/run_aim_loop.py --kp-x 0.45 --kp-y 0.38 --click-interval 0.1
 
 ---
 
-## 🔧 模块工具链独立运行
+## 模块工具链独立运行
 
 - **启动屏幕图像采集器**：
   ```powershell
@@ -170,15 +170,7 @@ uv run roll/control/run_aim_loop.py --kp-x 0.45 --kp-y 0.38 --click-interval 0.1
 
 ---
 
-## 🤝 致谢与结对协作 (Acknowledgements)
-
-- **项目架构与主导开发 (Author)**：[HengmingZ](https://github.com/HengmingZ)
-- **系统算法与架构结对 (AI Pair Programmer)**：[Google DeepMind Antigravity](https://deepmind.google/)
-- **开发工具链支持 (Tooling & Environment)**：[Astral uv](https://github.com/astral-sh/uv)
-
----
-
-## ⚠️ 免责声明 (Disclaimer)
+## 免责声明 (Disclaimer)
 
 本项目仅供计算机视觉算法研究、双轴运动控制学术实验与人机交互自动化学习使用。严禁将本项目用于侵犯第三方软件服务条款、网络游戏作弊或任何商业不当用途。因使用本项目产生的一切后果由使用者自行承担。
 
