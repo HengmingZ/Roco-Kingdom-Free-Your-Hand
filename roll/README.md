@@ -102,6 +102,7 @@ uv run roll/control/run_aim_loop.py --click-interval 0.10 --click-when-locked
 基于标注好的 130 张样本，在 NVIDIA GeForce RTX 5060 Ti 上完成 50 轮全量微调：
 - **最终验证集指标**：**mAP@50: 89.0%**，**精确率: 81.0%**，**召回率: 77.4%**，**推理速度: 3.0 ms/帧**。
 - **权重文件存放位置**：`roll/weights/best.pt`。
+- **官方 Release 发布页**：[v1.0.0 Release 页面](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0)（或直接下载附件 [best.pt (52.0 MB)](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/download/v1.0.0/best.pt)）。
 - **开箱即用拉取**：系统在首次启动时会自动检测并从 GitHub Release CDN 静默下载补齐，亦可随时手动执行：
   ```powershell
   uv run roll/download_weights.py

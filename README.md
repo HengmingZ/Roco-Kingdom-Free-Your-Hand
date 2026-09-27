@@ -5,6 +5,13 @@
   <i>Deep Learning Vision (YOLOv8 Medium) + Dual-Axis Visual Servoing PID Aiming & Non-blocking Pulse Auto-Clicker</i>
 </p>
 
+<p align="center">
+  <a href="https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0"><img src="https://img.shields.io/badge/Release-v1.0.0-blue.svg" alt="Release v1.0.0"></a>
+  <a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/badge/package_manager-uv-blueviolet.svg" alt="uv"></a>
+  <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.11%2Bcu128-ee4c2c.svg" alt="PyTorch"></a>
+  <a href="https://github.com/ultralytics/ultralytics"><img src="https://img.shields.io/badge/YOLO-v8_Medium-00FFFF.svg" alt="Ultralytics YOLO"></a>
+</p>
+
 ---
 
 ## 🌟 核心特性 (Key Features)
@@ -97,14 +104,16 @@ uv sync
 
 ### 3. 模型权重 (开箱即用 / Out of the Box)
 
-本项目提供完整的训练权重自动下载与分发支持：
-* **自动静默补齐（推荐）**：启动 `aim_gui.py` 或 `run_aim_loop.py` 时，若检测到本地缺失 `roll/weights/best.pt`，系统将自动从 GitHub Release 资产中下载微调模型，完全开箱即用。
-* **手动一键下载**：亦可随时运行独立下载工具：
+本项目提供完整的训练权重自动下载与官方 Release 托管支持：
+* 📦 **官方 Release 发布页**：[v1.0.0 - YOLOv8m 视觉伺服跟瞄初始版本](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0)（包含微调好的 `best.pt`，文件大小 49.6 MB / 52.0 MB）。
+* 🚀 **自动静默补齐（推荐）**：启动 `aim_gui.py` 或 `run_aim_loop.py` 时，若检测到本地缺失 `roll/weights/best.pt`，系统将自动从 Release 资产中流式下载微调模型，完全开箱即用。
+* 📥 **手动一键下载**：亦可随时运行独立下载工具：
   ```powershell
   uv run roll/download_weights.py
   ```
   或双击运行批处理脚本：`roll/run_download_weights.bat`。
-* **国内镜像加速（可选）**：如遇 GitHub 连接受限，可在终端指定环境变量下载：
+* 🌐 **浏览器手动下载**：可直接在 [Release v1.0.0](https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/tag/v1.0.0) 页面下载 `best.pt` 附件，并放置在 `roll/weights/best.pt` 即可。
+* ⚡ **国内镜像加速（可选）**：如遇 GitHub 连接受限，可在终端指定环境变量下载：
   ```powershell
   $env:ROCO_WEIGHTS_URL="https://ghfast.top/https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/download/v1.0.0/best.pt"
   uv run roll/download_weights.py
