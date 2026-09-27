@@ -23,6 +23,7 @@ if ROLL_ROOT not in sys.path:
 from capture.screen_grabber import ScreenGrabber
 from model.yolo_m import YOLOMDetector, YOLOMConfig
 from model.pipeline import VisionAimPipeline, DetectionResult
+from model.weights_manager import resolve_and_ensure_weights
 from control.pid import DualAxisPID, PIDConfig
 from control.tracker import TargetTracker, TrackedState
 
@@ -94,14 +95,11 @@ class VisualAimController:
         self._last_click_time = 0.0
 
         # 1. Pipeline & Model
-        if weights_path is None:
-            cands = [
-                os.path.join(ROLL_ROOT, "weights", "best.pt"),
-                os.path.join(PROJECT_ROOT, "yolov8m.pt"),
-            ]
-            weights_path = next((p for p in cands if os.path.exists(p)), "yolov8m.pt")
-
-        cfg = YOLOMConfig(weights_path=weights_path, conf_threshold=conf_threshold)
+        # [UPDATE - 2026-09-19]
+        # Reason: Out-of-the-box readiness with automatic GitHub Release weights download & fallback.
+        # Modification: Replaced static local path search with resolve_and_ensure_weights().
+        resolved_weights = resolve_and_ensure_weights(weights_path=weights_path, auto_download=True)
+        cfg = YOLOMConfig(weights_path=resolved_weights, conf_threshold=conf_threshold)
         self.detector = YOLOMDetector(cfg)
         self.grabber = ScreenGrabber()
         self.pipeline = VisionAimPipeline(detector=self.detector, grabber=self.grabber, monitor_index=monitor_index)

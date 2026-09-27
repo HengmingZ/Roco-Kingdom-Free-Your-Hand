@@ -97,11 +97,16 @@ uv run roll/control/run_aim_loop.py --click-interval 0.10 --click-when-locked
 
 ---
 
-### 2. 模型训练与权重产物 (YOLOv8 Medium Training)
+### 2. 模型训练与开箱即用权重 (YOLOv8 Medium Weights)
 
 基于标注好的 130 张样本，在 NVIDIA GeForce RTX 5060 Ti 上完成 50 轮全量微调：
 - **最终验证集指标**：**mAP@50: 89.0%**，**精确率: 81.0%**，**召回率: 77.4%**，**推理速度: 3.0 ms/帧**。
-- **权重文件**：`roll/weights/best.pt`、`roll/weights/best.onnx`。
+- **权重文件存放位置**：`roll/weights/best.pt`。
+- **开箱即用拉取**：系统在首次启动时会自动检测并从 GitHub Release CDN 静默下载补齐，亦可随时手动执行：
+  ```powershell
+  uv run roll/download_weights.py
+  ```
+  或双击运行 `roll/run_download_weights.bat`。
 
 ---
 

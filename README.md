@@ -95,6 +95,21 @@ uv sync
    ```
 2. 根据提示重启电脑使驱动生效。
 
+### 3. 模型权重 (开箱即用 / Out of the Box)
+
+本项目提供完整的训练权重自动下载与分发支持：
+* **自动静默补齐（推荐）**：启动 `aim_gui.py` 或 `run_aim_loop.py` 时，若检测到本地缺失 `roll/weights/best.pt`，系统将自动从 GitHub Release 资产中下载微调模型，完全开箱即用。
+* **手动一键下载**：亦可随时运行独立下载工具：
+  ```powershell
+  uv run roll/download_weights.py
+  ```
+  或双击运行批处理脚本：`roll/run_download_weights.bat`。
+* **国内镜像加速（可选）**：如遇 GitHub 连接受限，可在终端指定环境变量下载：
+  ```powershell
+  $env:ROCO_WEIGHTS_URL="https://ghfast.top/https://github.com/HengmingZ/Roco-Kingdom-Free-Your-Hand/releases/download/v1.0.0/best.pt"
+  uv run roll/download_weights.py
+  ```
+
 ---
 
 ## 🎮 运行控制 (Usage)
