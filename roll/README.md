@@ -131,4 +131,6 @@ uv run roll/capture/capture_gui.py
 
 - **主导开发 (Author)**：[HengmingZ](https://github.com/HengmingZ)
 - **架构结对 (AI Pair Programmer)**：[Google DeepMind Antigravity](https://deepmind.google/)
+- **开发工具链支持 (Tooling & Environment)**：[Astral uv](https://github.com/astral-sh/uv)
+
 

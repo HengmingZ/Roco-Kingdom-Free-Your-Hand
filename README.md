@@ -174,6 +174,7 @@ uv run roll/control/run_aim_loop.py --kp-x 0.45 --kp-y 0.38 --click-interval 0.1
 
 - **项目架构与主导开发 (Author)**：[HengmingZ](https://github.com/HengmingZ)
 - **系统算法与架构结对 (AI Pair Programmer)**：[Google DeepMind Antigravity](https://deepmind.google/)
+- **开发工具链支持 (Tooling & Environment)**：[Astral uv](https://github.com/astral-sh/uv)
 
 ---
 
