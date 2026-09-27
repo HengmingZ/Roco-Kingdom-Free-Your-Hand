@@ -170,6 +170,14 @@ uv run roll/control/run_aim_loop.py --kp-x 0.45 --kp-y 0.38 --click-interval 0.1
 
 ---
 
+## 🤝 致谢与结对协作 (Acknowledgements)
+
+- **项目架构与主导开发 (Author)**：[HengmingZ](https://github.com/HengmingZ)
+- **系统算法与架构结对 (AI Pair Programmer)**：[Google DeepMind Antigravity](https://deepmind.google/)
+
+---
+
 ## ⚠️ 免责声明 (Disclaimer)
 
 本项目仅供计算机视觉算法研究、双轴运动控制学术实验与人机交互自动化学习使用。严禁将本项目用于侵犯第三方软件服务条款、网络游戏作弊或任何商业不当用途。因使用本项目产生的一切后果由使用者自行承担。
+
