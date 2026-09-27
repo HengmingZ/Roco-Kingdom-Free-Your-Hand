@@ -1,0 +1,51 @@
+# ==========================================
+# RocoClicker & Roll Module .gitignore
+# ==========================================
+
+# 1. Exclude legacy project directory (per user specification)
+/RocoKingdom_Clicker/
+
+# 2. Python virtual environments & packages
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# 3. Python cache & compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 4. Deep learning weights, checkpoints & training run artifacts
+/yolov8m.pt
+*.pt
+*.onnx
+roll/weights/*
+!roll/weights/.gitkeep
+runs/
+
+# 5. Raw game captures, training datasets & annotation files (Zero user game data leaked)
+roll/data/*
+!roll/data/.gitkeep
+*.cache
+roll/data/**/*.cache
+
+# 6. IDE, editor & OS temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 7. Runtime logs & temp files
+*.log
+*.tmp
+temp/
+tmp/

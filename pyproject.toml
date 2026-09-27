@@ -1,0 +1,23 @@
+[project]
+name = "rococlicker"
+version = "0.1.0"
+description = "RocoKingdom Clicker and Roll Vision Tracking System"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0.0",
+    "opencv-python>=4.10.0.84",
+    "pillow>=10.0.0",
+    "torch==2.11.0+cu128",
+    "torchvision==0.26.0+cu128",
+    "ultralytics>=8.4.149",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
